@@ -36,3 +36,36 @@ updates:
   labels:
     - "dependencies"
     - "github-actions"
+# Enable version updates for pre-commit
+- package-ecosystem: "pre-commit"
+  directory: "/"
+  commit-message:
+    prefix: "[pre-commit] "
+  schedule:
+    interval: "daily"
+    time: "02:00"
+    timezone: "Europe/Prague"
+  target-branch: "development"    
+  groups:
+    major-updates:
+      patterns:
+        - "*"
+      update-types:
+        - "major"
+    support-dependencies:
+      applies-to: version-updates
+      patterns:
+        - "*"
+      update-types:
+        - "minor"
+        - "patch"
+    security-dependencies:
+      applies-to: security-updates
+      patterns:
+        - "*"
+      update-types:
+        - "minor"
+        - "patch"
+  labels:
+    - "dependencies"
+    - "pre-commit"
