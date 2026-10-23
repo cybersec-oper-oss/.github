@@ -36,7 +36,7 @@ jobs:
         with:
           access_token: ${{ secrets.BW_ACCESS_TOKEN }}
           secrets: |
-            SCORECARD_TOKEN_BW_UUID > SCORECARD_TOKEN
+            ${{ secrets.SCORECARD_TOKEN_BW_UUID }} > SCORECARD_TOKEN
       - name: "Run analysis"
         uses: ossf/scorecard-action@fa7117db83c52d787ae5a89f350999701505d78e # v2.5.0
         with:
