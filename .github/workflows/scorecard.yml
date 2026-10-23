@@ -17,6 +17,7 @@ jobs:
       id-token: write
       # Recommended reads for private repos to avoid GraphQL/SAST gaps
       contents: read
+      actions: read
       issues: read
       pull-requests: read
       checks: read      
