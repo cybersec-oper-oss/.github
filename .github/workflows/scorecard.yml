@@ -3,9 +3,7 @@ name: Scorecard supply-chain security
 on:
   workflow_call:
     secrets:
-      BW_ACCESS_TOKEN:
-        required: true
-      SCORECARD_TOKEN_BW_UUID:
+      SCORECARD_TOKEN:
         required: true
 
 permissions:
